@@ -2,7 +2,8 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 
 const axiosInstance = axios.create({
-  baseURL: '/', // To work with Vite proxy which handles /api prefix
+  baseURL: import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000',
+, // To work with Vite proxy which handles /api prefix
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
